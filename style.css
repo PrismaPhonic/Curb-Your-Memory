@@ -1,0 +1,139 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("background.jpg");
+  height: 100%;
+  background-position: center;
+  background-color: rgb(0, 0, 2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h3 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 6vh;
+}
+
+h3 {
+  font-size: 4vh;
+}
+
+#score {
+  border-style: solid;
+  border-color: white;
+  border-radius: 5px;
+  padding: 3vh 1vh 0;
+  width: 20vh;
+  height: 15vh;
+  margin: auto;
+  background-color: rgba(18, 16, 43, 0.479);
+}
+
+#flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2vh;
+}
+
+#header {
+  margin: 0;
+  padding-top: 5vh;
+}
+
+.button-wrapper {
+  display: inline-block;
+  margin: auto;
+}
+
+.button {
+  padding: 5px;
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #da3e4b;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#cardgame {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  padding: 0 10vw 10vw;
+  background-color: transparent;
+}
+
+.face-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.scene {
+  width: 21vh;
+  height: 15vh;
+  perspective: 45vh;
+  margin: 2vh;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-origin: center right;
+  transform-style: preserve-3d;
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  backface-visibility: hidden;
+  border: 2px solid white;
+  border-radius: 2vh;
+}
+
+.card__face--front {
+  background-image: url(cards/playingcard.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.card__face--back {
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
